@@ -19,25 +19,24 @@ const ApplyNow = () => {
     setIsSubmitting(true);
     
     try {
-      const response = await fetch('/api/applications', {
-        method: 'POST',
-        headers: { 'Content-Type': 'application/json' },
-        body: JSON.stringify({
-          ...formData,
-          universityId: formData.universityName.slice(0, 3).toUpperCase()
-        })
+      const { collection, addDoc, serverTimestamp } = await import('firebase/firestore');
+      const { db } = await import('../lib/firebase');
+
+      await addDoc(collection(db, 'applications'), {
+        ...formData,
+        universityId: formData.universityName.slice(0, 3).toUpperCase(),
+        createdAt: serverTimestamp(),
+        status: 'new'
       });
 
-      if (response.ok) {
-        setSubmitted(true);
-        // Automatically redirect to WhatsApp after a small delay
-        const whatsappMsg = `New MBBS Enquiry:%0A%0A*Name:* ${formData.fullName}%0A*Phone:* ${formData.phone}%0A*Email:* ${formData.email}%0A*University:* ${formData.universityName}%0A*State:* ${formData.state}`;
-        const whatsappUrl = `https://wa.me/917909096738?text=${whatsappMsg}`;
-        
-        setTimeout(() => {
-          window.open(whatsappUrl, '_blank');
-        }, 1500);
-      }
+      setSubmitted(true);
+      // Automatically redirect to WhatsApp after a small delay
+      const whatsappMsg = `New MBBS Enquiry:%0A%0A*Name:* ${formData.fullName}%0A*Phone:* ${formData.phone}%0A*Email:* ${formData.email}%0A*University:* ${formData.universityName}%0A*State:* ${formData.state}`;
+      const whatsappUrl = `https://wa.me/917909096738?text=${whatsappMsg}`;
+      
+      setTimeout(() => {
+        window.open(whatsappUrl, '_blank');
+      }, 1500);
     } catch (error) {
       console.error('Submission failed:', error);
       alert('Failed to submit application. Please check your connection.');
