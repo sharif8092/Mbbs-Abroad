@@ -1,18 +1,29 @@
-import React, { useState } from 'react';
+import React, { useState, useEffect } from 'react';
 import { SEO } from '../components/common/SEO';
 import { motion } from 'motion/react';
-import { Send, CheckCircle2, Phone, MessageSquare, Loader2 } from 'lucide-react';
+import { Send, CheckCircle2, Phone, Loader2 } from 'lucide-react';
+import { useSearchParams } from 'react-router-dom';
+import { initialUnis } from '../data/universities';
 
 const ApplyNow = () => {
+  const [searchParams] = useSearchParams();
+  const preselectedUniversity = searchParams.get('university') || '';
+
   const [isSubmitting, setIsSubmitting] = useState(false);
   const [submitted, setSubmitted] = useState(false);
   const [formData, setFormData] = useState({
     fullName: '',
     email: '',
     phone: '',
-    universityName: '',
+    universityName: preselectedUniversity,
     state: ''
   });
+
+  useEffect(() => {
+    if (preselectedUniversity) {
+      setFormData(prev => ({ ...prev, universityName: preselectedUniversity }));
+    }
+  }, [preselectedUniversity]);
 
   const handleSubmit = async (e: React.FormEvent) => {
     e.preventDefault();
@@ -24,25 +35,24 @@ const ApplyNow = () => {
 
       await addDoc(collection(db, 'applications'), {
         ...formData,
-        universityId: formData.universityName.slice(0, 3).toUpperCase(),
+        universityId: formData.universityName ? formData.universityName.slice(0, 3).toUpperCase() : '',
         createdAt: serverTimestamp(),
         status: 'new'
       });
-
-      setSubmitted(true);
-      // Automatically redirect to WhatsApp after a small delay
-      const whatsappMsg = `New MBBS Enquiry:%0A%0A*Name:* ${formData.fullName}%0A*Phone:* ${formData.phone}%0A*Email:* ${formData.email}%0A*University:* ${formData.universityName}%0A*State:* ${formData.state}`;
-      const whatsappUrl = `https://wa.me/917909096738?text=${whatsappMsg}`;
-      
-      setTimeout(() => {
-        window.open(whatsappUrl, '_blank');
-      }, 1500);
     } catch (error) {
-      console.error('Submission failed:', error);
-      alert('Failed to submit application. Please check your connection.');
-    } finally {
-      setIsSubmitting(false);
-    }
+      console.error('Firebase save failed, continuing to WhatsApp:', error);
+    } 
+
+    // ALWAYS redirect to WhatsApp even if DB fails
+    setSubmitted(true);
+    const whatsappMsg = `New MBBS Enquiry:%0A%0A*Name:* ${formData.fullName}%0A*Phone:* ${formData.phone}%0A*Email:* ${formData.email}%0A*University:* ${formData.universityName}%0A*State:* ${formData.state}`;
+    const whatsappUrl = `https://wa.me/917909096738?text=${whatsappMsg}`;
+    
+    setTimeout(() => {
+      window.open(whatsappUrl, '_blank');
+    }, 500);
+
+    setIsSubmitting(false);
   };
 
   const handleChange = (e: React.ChangeEvent<HTMLInputElement | HTMLSelectElement>) => {
@@ -134,12 +144,11 @@ const ApplyNow = () => {
                     <div className="grid grid-cols-1 sm:grid-cols-2 gap-8">
                         <div className="space-y-3">
                             <label className="text-[10px] font-black text-slate-500 uppercase tracking-widest ml-1">Preferred Institution</label>
-                            <select name="universityName" value={formData.universityName} onChange={handleChange} className="w-full bg-slate-50 border-0 rounded-2xl p-5 text-slate-900 font-bold focus:ring-4 focus:ring-blue-100 focus:bg-white transition-all appearance-none cursor-pointer">
+                            <select required name="universityName" value={formData.universityName} onChange={handleChange} className="w-full bg-slate-50 border-0 rounded-2xl p-5 text-slate-900 font-bold focus:ring-4 focus:ring-blue-100 focus:bg-white transition-all appearance-none cursor-pointer">
                                 <option value="">Select University</option>
-                                <option value="Bukhara State Medical Institute">Bukhara State Medical Institute</option>
-                                <option value="Tashkent State Medical Academy">Tashkent State Medical Academy</option>
-                                <option value="Samarkand State Medical University">Samarkand State Medical University</option>
-                                <option value="Osh State University">Osh State University</option>
+                                {initialUnis.map(u => (
+                                    <option key={u.id} value={u.name}>{u.name}</option>
+                                ))}
                                 <option value="Other / Advisory Needed">Other / Advisory Needed</option>
                             </select>
                         </div>

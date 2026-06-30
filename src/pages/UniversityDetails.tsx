@@ -443,7 +443,7 @@ const UniversityDetails = () => {
                 <p className="text-slate-400 text-sm mb-10 leading-relaxed font-medium">Limited slots available for {university.name}. Complete registration to lock your seat at current fee structure.</p>
                 
                 <Link 
-                  to="/apply"
+                  to={`/apply?university=${encodeURIComponent(university.name)}`}
                   className="block w-full bg-blue-600 text-white text-center py-5 rounded-2xl font-black text-xs uppercase tracking-widest shadow-2xl shadow-blue-500/20 hover:bg-blue-700 hover:-translate-y-1 transition-all active:scale-95 mb-4"
                 >
                   APPLY FOR ADMISSION

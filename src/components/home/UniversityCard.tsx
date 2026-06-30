@@ -102,7 +102,7 @@ export const UniversityCard: React.FC<UniversityCardProps> = ({ university, inde
             <ArrowRight className="w-3.5 h-3.5 text-blue-600" />
           </Link>
           <Link
-            to="/apply"
+            to={`/apply?university=${encodeURIComponent(university.name)}`}
             className="flex items-center justify-center py-5 px-6 rounded-2xl text-[10px] font-black uppercase tracking-[0.2em] text-white bg-blue-600 shadow-2xl shadow-blue-100 hover:bg-slate-900 hover:shadow-slate-200 transition-all active:scale-95"
           >
             Apply
