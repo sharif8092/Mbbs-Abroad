@@ -77,9 +77,9 @@ export const Navbar = () => {
             </div>
             
             <div className="flex items-center gap-10 border-l border-slate-100 pl-10">
-              <a href="tel:+917909096738" className="flex flex-col items-end group/call">
+              <a href="tel:+918521123304" className="flex flex-col items-end group/call">
                 <span className="text-[8px] text-slate-400 font-black uppercase tracking-[0.3em] group-hover:text-blue-600 transition-colors mb-1">Advisory</span>
-                <span className="text-sm font-black text-slate-900 tracking-tight">+91 79090 96738</span>
+                <span className="text-sm font-black text-slate-900 tracking-tight">+91 85211 23304</span>
               </a>
               <Link
                 to="/apply"
@@ -134,11 +134,11 @@ export const Navbar = () => {
                 Apply for 2026 Batch
               </Link>
               <div className="flex justify-around pt-8 border-t border-slate-100">
-                <a href="tel:+917909096738" className="flex flex-col items-center text-slate-900">
+                <a href="tel:+918521123304" className="flex flex-col items-center text-slate-900">
                   <Phone className="w-5 h-5 mb-2" />
                   <span className="text-[9px] font-black uppercase tracking-widest">Call Desk</span>
                 </a>
-                <a href="https://wa.me/917909096738" className="flex flex-col items-center text-blue-600">
+                <a href="https://wa.me/918521123304" className="flex flex-col items-center text-blue-600">
                   <MessageSquare className="w-5 h-5 mb-2" />
                   <span className="text-[9px] font-black uppercase tracking-widest">WhatsApp</span>
                 </a>

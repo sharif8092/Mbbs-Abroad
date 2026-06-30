@@ -52,7 +52,7 @@ export const SEO: React.FC<SEOProps> = ({
             },
             "contactPoint": {
               "@type": "ContactPoint",
-              "telephone": "+91-79090-96738",
+              "telephone": "+91-85211-23304",
               "contactType": "Admissions"
             }
           }

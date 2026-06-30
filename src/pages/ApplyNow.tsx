@@ -32,7 +32,7 @@ const ApplyNow = () => {
         setSubmitted(true);
         // Automatically redirect to WhatsApp after a small delay
         const whatsappMsg = `New MBBS Enquiry:%0A%0A*Name:* ${formData.fullName}%0A*Phone:* ${formData.phone}%0A*Email:* ${formData.email}%0A*University:* ${formData.universityName}%0A*State:* ${formData.state}`;
-        const whatsappUrl = `https://wa.me/917909096738?text=${whatsappMsg}`;
+        const whatsappUrl = `https://wa.me/918521123304?text=${whatsappMsg}`;
         
         setTimeout(() => {
           window.open(whatsappUrl, '_blank');
@@ -86,9 +86,9 @@ const ApplyNow = () => {
             <div className="mt-16 pt-12 border-t border-white/5 relative z-10">
               <p className="text-[9px] uppercase tracking-[0.2em] font-black mb-4 text-slate-500">Need immediate help?</p>
               <div className="flex flex-col space-y-4">
-                <a href="tel:+917909096738" className="flex items-center group/link">
+                <a href="tel:+918521123304" className="flex items-center group/link">
                     <div className="bg-white/5 p-3 rounded-xl mr-4 group-hover/link:bg-blue-600 transition-colors"><Phone className="w-4 h-4 text-blue-400 group-hover/link:text-white" /></div>
-                    <span className="font-black text-sm tracking-tight">+91 79090 96738</span>
+                    <span className="font-black text-sm tracking-tight">+91 85211 23304</span>
                 </a>
               </div>
             </div>
