@@ -52,7 +52,7 @@ const About = () => {
           </div>
           <div className="flex-1 relative">
             <div className="rounded-[4rem] overflow-hidden shadow-2xl relative z-10 border-8 border-white shadow-blue-900/10 scale-105">
-                <img src="https://picsum.photos/seed/consulting/600/600" alt="TCG Consulting Team" className="w-full aspect-square object-cover" referrerPolicy="no-referrer" />
+                <img src="https://images.unsplash.com/photo-1576091160399-112ba8d25d1d?auto=format&fit=crop&q=80&w=800&h=800" alt="TCG Consulting Team" className="w-full aspect-square object-cover" />
             </div>
             <div className="absolute -bottom-10 -left-10 bg-slate-900 text-white p-10 rounded-[2.5rem] z-20 shadow-2xl hidden md:block border border-white/5">
                 <p className="text-2xl font-black italic mb-3 leading-tight">"Your Trust, Our Commitment to Your Success."</p>
