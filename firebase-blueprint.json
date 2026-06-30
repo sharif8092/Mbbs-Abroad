@@ -1,0 +1,112 @@
+{
+  "entities": {
+    "University": {
+      "title": "University",
+      "description": "Details about international medical universities.",
+      "type": "object",
+      "properties": {
+        "name": { "type": "string" },
+        "country": { "type": "string", "enum": ["Uzbekistan", "Kyrgyzstan"] },
+        "location": { "type": "string" },
+        "overview": { "type": "string" },
+        "package": {
+          "type": "object",
+          "properties": {
+            "firstYearPackage": { "type": "string" },
+            "tuitionFeeYearly": { "type": "string" },
+            "hostelFeeYearly": { "type": "string" },
+            "visaFee": { "type": "string" },
+            "policeRegistration": { "type": "string" },
+            "messFeeYearly": { "type": "string" },
+            "healthInsurance": { "type": "string" }
+          }
+        },
+        "features": { "type": "array", "items": { "type": "string" } },
+        "eligibility": { "type": "array", "items": { "type": "string" } },
+        "documentsRequired": { "type": "array", "items": { "type": "string" } },
+        "admissionProcess": { "type": "array", "items": { "type": "string" } },
+        "image": { "type": "string" },
+        "gallery": { "type": "array", "items": { "type": "string" } },
+        "usps": { "type": "array", "items": { "type": "string" } },
+        "flag": { "type": "string" },
+        "createdAt": { "type": "string", "format": "date-time" },
+        "updatedAt": { "type": "string", "format": "date-time" }
+      },
+      "required": ["name", "country", "location", "overview"]
+    },
+    "Enquiry": {
+      "title": "Enquiry",
+      "description": "Student admission enquiry or application.",
+      "type": "object",
+      "properties": {
+        "fullName": { "type": "string" },
+        "email": { "type": "string", "format": "email" },
+        "phone": { "type": "string" },
+        "universityId": { "type": "string" },
+        "universityName": { "type": "string" },
+        "status": { "type": "string", "enum": ["Pending", "Reviewing", "Approved", "Rejected"] },
+        "createdAt": { "type": "string", "format": "date-time" }
+      },
+      "required": ["fullName", "email", "phone", "universityId"]
+    },
+    "Blog": {
+      "title": "Blog",
+      "description": "Educational blog posts.",
+      "type": "object",
+      "properties": {
+        "title": { "type": "string" },
+        "slug": { "type": "string" },
+        "excerpt": { "type": "string" },
+        "content": { "type": "string" },
+        "date": { "type": "string" },
+        "image": { "type": "string" },
+        "createdAt": { "type": "string", "format": "date-time" }
+      },
+      "required": ["title", "slug", "content"]
+    },
+    "GalleryImage": {
+      "title": "Gallery Image",
+      "description": "Photos of university campuses and student life.",
+      "type": "object",
+      "properties": {
+        "url": { "type": "string" },
+        "caption": { "type": "string" },
+        "universityId": { "type": "string" },
+        "createdAt": { "type": "string", "format": "date-time" }
+      },
+      "required": ["url"]
+    },
+    "Admin": {
+      "title": "Admin",
+      "description": "Users with administrative privileges.",
+      "type": "object",
+      "properties": {
+        "email": { "type": "string", "format": "email" },
+        "role": { "type": "string", "enum": ["superadmin", "editor"] }
+      },
+      "required": ["email"]
+    }
+  },
+  "firestore": {
+    "universities": {
+      "schema": "University",
+      "description": "Collection of medical universities."
+    },
+    "enquiries": {
+      "schema": "Enquiry",
+      "description": "Collection of student applications/enquiries."
+    },
+    "blogs": {
+      "schema": "Blog",
+      "description": "Collection of blog posts."
+    },
+    "gallery": {
+      "schema": "GalleryImage",
+      "description": "Collection of gallery images."
+    },
+    "admins": {
+      "schema": "Admin",
+      "description": "Collection of administrative users."
+    }
+  }
+}
