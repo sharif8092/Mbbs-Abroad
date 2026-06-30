@@ -94,7 +94,7 @@ const Home = () => {
       if (response.ok) {
         setSubmitted(true);
         const whatsappMsg = `New Counsel Enquiry:%0A%0A*Name:* ${formData.name}%0A*Phone:* ${formData.phone}%0A*Target Region:* ${formData.region}`;
-        const whatsappUrl = `https://wa.me/918521123304?text=${whatsappMsg}`;
+        const whatsappUrl = `https://wa.me/917909096738?text=${whatsappMsg}`;
         
         setTimeout(() => {
           window.open(whatsappUrl, '_blank');
@@ -253,7 +253,7 @@ const Home = () => {
                   <div className="relative">
                     <h4 className="text-[9px] font-black text-white/60 uppercase tracking-[0.3em] mb-3">Direct Access</h4>
                     <p className="text-lg font-bold mb-6 leading-tight">Speak with our <span className="text-blue-200">Senior Head</span> directly via WhatsApp.</p>
-                    <a href="https://wa.me/918521123304" className="inline-flex items-center gap-3 bg-white text-blue-600 px-6 py-3.5 rounded-2xl transition-all font-black text-[10px] tracking-[0.2em] uppercase hover:bg-slate-900 hover:text-white group">
+                    <a href="https://wa.me/917909096738" className="inline-flex items-center gap-3 bg-white text-blue-600 px-6 py-3.5 rounded-2xl transition-all font-black text-[10px] tracking-[0.2em] uppercase hover:bg-slate-900 hover:text-white group">
                         <MessageSquare className="w-3.5 h-3.5 group-hover:scale-110 transition-transform" />
                         Live Support
                     </a>
@@ -638,7 +638,7 @@ const Home = () => {
             <a href="tel:+918521123304" className="bg-white text-blue-900 px-10 py-4 rounded-2xl font-black text-sm tracking-widest shadow-2xl shadow-blue-500/10 hover:-translate-y-1 transition-all active:scale-95">
               CALL SENIOR COUNSELOR
             </a>
-            <a href="https://wa.me/918521123304" className="bg-blue-600 text-white px-10 py-4 rounded-2xl font-black text-sm tracking-widest shadow-2xl shadow-blue-500/20 hover:-translate-y-1 transition-all flex items-center justify-center active:scale-95">
+            <a href="https://wa.me/917909096738" className="bg-blue-600 text-white px-10 py-4 rounded-2xl font-black text-sm tracking-widest shadow-2xl shadow-blue-500/20 hover:-translate-y-1 transition-all flex items-center justify-center active:scale-95">
               <MessageSquare className="mr-3 w-5 h-5 text-blue-200" />
               WHATSAPP US NOW
             </a>

@@ -138,7 +138,7 @@ export const Navbar = () => {
                   <Phone className="w-5 h-5 mb-2" />
                   <span className="text-[9px] font-black uppercase tracking-widest">Call Desk</span>
                 </a>
-                <a href="https://wa.me/918521123304" className="flex flex-col items-center text-blue-600">
+                <a href="https://wa.me/917909096738" className="flex flex-col items-center text-blue-600">
                   <MessageSquare className="w-5 h-5 mb-2" />
                   <span className="text-[9px] font-black uppercase tracking-widest">WhatsApp</span>
                 </a>

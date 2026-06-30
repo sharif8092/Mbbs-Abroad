@@ -35,14 +35,14 @@ export const Hero = () => {
               transition={{ duration: 0.8, ease: [0.16, 1, 0.3, 1] }}
               className="text-6xl md:text-7xl lg:text-[104px] font-black leading-[0.85] mb-10 tracking-[-0.04em] text-slate-900"
             >
-              Global Medical <br />
+              Study MBBS <br />
               <span className="text-blue-600 relative">
-                Excellence
+                Abroad
                 <svg className="absolute -bottom-2 left-0 w-full h-3 text-blue-100 -z-10" viewBox="0 0 100 10" preserveAspectRatio="none">
                   <path d="M0 5 Q 50 10 100 5" stroke="currentColor" strokeWidth="8" fill="none" />
                 </svg>
               </span> 
-              <br />Starts Here.
+              <br />With Confidence.
             </motion.h1>
 
             <motion.div
@@ -52,7 +52,7 @@ export const Hero = () => {
               className="max-w-lg"
             >
               <p className="text-slate-500 text-xl md:text-2xl mb-12 leading-relaxed font-serif italic text-balance">
-                "We don't just process admissions; we architect medical careers across the world's most prestigious institutions."
+                "Your dream of becoming a doctor starts here. Get guaranteed admission in top NMC & WHO approved medical universities abroad."
               </p>
 
               <div className="flex flex-col sm:flex-row gap-5">

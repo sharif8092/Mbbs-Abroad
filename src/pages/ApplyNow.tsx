@@ -32,7 +32,7 @@ const ApplyNow = () => {
         setSubmitted(true);
         // Automatically redirect to WhatsApp after a small delay
         const whatsappMsg = `New MBBS Enquiry:%0A%0A*Name:* ${formData.fullName}%0A*Phone:* ${formData.phone}%0A*Email:* ${formData.email}%0A*University:* ${formData.universityName}%0A*State:* ${formData.state}`;
-        const whatsappUrl = `https://wa.me/918521123304?text=${whatsappMsg}`;
+        const whatsappUrl = `https://wa.me/917909096738?text=${whatsappMsg}`;
         
         setTimeout(() => {
           window.open(whatsappUrl, '_blank');

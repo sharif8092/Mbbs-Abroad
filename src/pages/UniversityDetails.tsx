@@ -450,7 +450,7 @@ const UniversityDetails = () => {
                 </Link>
                 
                 <a 
-                  href="https://wa.me/918521123304"
+                  href="https://wa.me/917909096738"
                   className="flex items-center justify-center gap-3 w-full bg-white/5 border border-white/10 text-white py-5 rounded-2xl font-black text-xs uppercase tracking-widest hover:bg-white/10 transition-all active:scale-95 mb-4"
                 >
                   <MessageSquare className="w-4 h-4 text-blue-400" />

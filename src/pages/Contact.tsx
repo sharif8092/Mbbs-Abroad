@@ -62,7 +62,7 @@ const Contact = () => {
       if (response.ok) {
         setSubmitted(true);
         const whatsappMsg = `New Contact Enquiry:%0A%0A*Name:* ${formData.name}%0A*Phone:* ${formData.phone}%0A*Target:* ${formData.country}%0A*Message:* ${formData.message}`;
-        const whatsappUrl = `https://wa.me/918521123304?text=${whatsappMsg}`;
+        const whatsappUrl = `https://wa.me/917909096738?text=${whatsappMsg}`;
         
         setTimeout(() => {
           window.open(whatsappUrl, '_blank');
@@ -105,7 +105,7 @@ const Contact = () => {
                 <p className="text-sm text-slate-500 font-bold group-hover:text-white opacity-80">+91 85211 23304</p>
                 <p className="text-[9px] font-black uppercase tracking-widest mt-2 group-hover:text-white opacity-60">10 AM - 8 PM IST</p>
               </a>
-              <a href="https://wa.me/918521123304" className="bg-white p-10 rounded-[2.5rem] shadow-2xl shadow-blue-900/5 border border-slate-100 group transition-all hover:bg-slate-900 hover:text-white">
+              <a href="https://wa.me/917909096738" className="bg-white p-10 rounded-[2.5rem] shadow-2xl shadow-blue-900/5 border border-slate-100 group transition-all hover:bg-slate-900 hover:text-white">
                 <div className="w-14 h-14 bg-slate-50 rounded-2xl flex items-center justify-center mb-8 group-hover:bg-white/10 group-hover:text-blue-400 transition-colors">
                   <MessageSquare className="text-slate-900 w-6 h-6 group-hover:text-blue-400" />
                 </div>
