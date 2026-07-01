@@ -8,8 +8,9 @@ export const universities: University[] = [
     location: 'Bukhara, Uzbekistan',
     overview: 'Bukhara State Medical Institute is one of the most prestigious medical institutes in Uzbekistan. It has a rich history and is known for its high-quality medical education.',
     package: {
-      firstYearPackage: '6800 USD',
-      tuitionFeeYearly: '3500 USD',
+      firstYearPackage: '8500 USD',
+      tuitionFeeYearly: '4200 USD',
+      healthInsurance: '150 USD',
       hostelFeeYearly: '400 USD',
       visaFee: '300 USD',
       policeRegistration: '300 USD',
@@ -42,10 +43,10 @@ export const universities: University[] = [
       'Apply for VISA',
       'Departure and arrival in Uzbekistan'
     ],
-    image: 'https://images.unsplash.com/photo-1541339907198-e08756dedf3f?auto=format&fit=crop&q=80&w=800',
+    image: '/universities/Bukhara-State-Medical-Institute.png',
     gallery: [
-      'https://images.unsplash.com/photo-1519494026892-80bbd2d6fd0d?auto=format&fit=crop&q=80&w=800',
-      'https://images.unsplash.com/photo-1576091160550-2173dba999ef?auto=format&fit=crop&q=80&w=800'
+      'https://images.unsplash.com/photo-1519494026892-80bbd2d6fd0d?auto=format&fit=crop&q=80&w=800'
+    
     ],
     usps: [
       'Top-tier research facilities in Central Asia',
@@ -61,11 +62,11 @@ export const universities: University[] = [
     location: 'Tashkent, Uzbekistan',
     overview: 'Tashkent State Medical University is a leading medical institution in Central Asia, offering world-class medical education and research opportunities.',
     package: {
-      firstYearPackage: '7500 USD',
+      firstYearPackage: '8,200 USD + ₹ 2,50,000',
       tuitionFeeYearly: '3500 USD',
-      hostelFeeYearly: '600 USD',
-      visaFee: '300 USD',
-      policeRegistration: '300 USD'
+      hostelFeeYearly: '800 USD',
+      messFeeYearly: '1300 USD',
+      visaFee: '₹ 2,50,000',
     },
     features: [
       'Safe Campus',
@@ -114,7 +115,8 @@ export const universities: University[] = [
       tuitionFeeYearly: '3500 USD',
       hostelFeeYearly: '500 USD',
       visaFee: '300 USD',
-      policeRegistration: '300 USD'
+      policeRegistration: '300 USD',
+      messFeeYearly: 'Indian Mess Available'
     },
     features: [
       'NMC Approved',
@@ -139,7 +141,7 @@ export const universities: University[] = [
       'Visa application',
       'Flight booking and travel'
     ],
-    image: '/universities/samarkand.jpg',
+    image: '/universities/samarkand.png',
     gallery: [
       'https://images.unsplash.com/photo-1541339907198-e08756dedf3f?auto=format&fit=crop&q=80&w=800',
       'https://images.unsplash.com/photo-1509062522246-3755977927d7?auto=format&fit=crop&q=80&w=800'
@@ -158,10 +160,11 @@ export const universities: University[] = [
     location: 'Osh, Kyrgyzstan',
     overview: 'Osh State University is one of the leading educational institutions in the Kyrgyz Republic, known for its international medical faculty and diverse student body.',
     package: {
-      firstYearPackage: '6500 USD',
-      tuitionFeeYearly: '3200 USD',
-      hostelFeeYearly: '600 USD',
-      healthInsurance: '150 USD'
+      firstYearPackage: '8500 USD',
+      tuitionFeeYearly: '4500 USD',
+      hostelFeeYearly: '1600 USD',
+      healthInsurance: '150 USD',
+      visaFee: '₹ 1000 USD'
     },
     features: [
       'International Medical Faculty',
@@ -237,7 +240,7 @@ export const universities: University[] = [
       'Visa endorsement at the Kyrgyz Embassy',
       'Departure and enrollment'
     ],
-    image: 'https://images.unsplash.com/photo-1523050854058-8df90110c9f1?auto=format&fit=crop&q=80&w=800',
+    image: '/universities/jalal-abad-state-university.png',
     gallery: [
       'https://images.unsplash.com/photo-1562774053-701939374585?auto=format&fit=crop&q=80&w=800'
     ],
@@ -285,7 +288,7 @@ export const universities: University[] = [
       'Visa clearance and approval',
       'Batch departure from Delhi'
     ],
-    image: '/universities/ksma.jpg',
+    image: '/universities/kyrgyz-state-medical-academy.png',
     gallery: [
       'https://images.unsplash.com/photo-1598128558393-70ff21433be0?auto=format&fit=crop&q=80&w=800'
     ],
@@ -331,7 +334,7 @@ export const universities: University[] = [
       'Visa endorsement at the Kazakh Embassy',
       'Travel coordination by TCG group'
     ],
-    image: 'https://images.unsplash.com/photo-1519494026892-80bbd2d6fd0d?auto=format&fit=crop&q=80&w=800',
+    image: '/universities/kazakh-national-medical-university.png',
     gallery: [
       'https://images.unsplash.com/photo-1607237138185-eedd9c632b0b?auto=format&fit=crop&q=80&w=800'
     ],
@@ -915,4 +918,6 @@ export const universities: University[] = [
     flag: '🇮🇷'
   }
 ];
+
+export const initialUnis = universities;
 
